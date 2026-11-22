@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+  <rect width="900" height="650" rx="42" fill="#e8e1fd"/>
+  <circle cx="724" cy="130" r="85" fill="#ffe288"/><path d="M0 530q180-140 420-23t480-25v168H0" fill="#bfe6cb"/>
+  <path d="M110 490V255l175-97 175 97v235" fill="#ffb69f" stroke="#242632" stroke-width="9" stroke-linejoin="round"/>
+  <path d="M470 490V290l145-91 170 91v200" fill="#9d8be7" stroke="#242632" stroke-width="9" stroke-linejoin="round"/>
+  <rect x="223" y="362" width="65" height="128" fill="#fff9e5" stroke="#242632" stroke-width="7"/><rect x="585" y="368" width="65" height="122" fill="#fff9e5" stroke="#242632" stroke-width="7"/>
+  <g fill="#fff9e5" stroke="#242632" stroke-width="6"><rect x="145" y="285" width="62" height="57" rx="5"/><rect x="335" y="285" width="62" height="57" rx="5"/><rect x="528" y="317" width="53" height="52" rx="5"/><rect x="684" y="317" width="53" height="52" rx="5"/></g>
+  <path d="M380 188q122-110 258-17" fill="none" stroke="#242632" stroke-width="11" stroke-linecap="round" stroke-dasharray="15 22"/><path d="M620 136l37 41-55 13" fill="none" stroke="#242632" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#242632"><circle cx="400" cy="505" r="16"/><circle cx="446" cy="505" r="16"/><circle cx="493" cy="505" r="16"/></g>
+  <rect x="105" y="100" width="228" height="67" rx="22" fill="#fff"/><text x="132" y="143" fill="#242632" font-family="Arial" font-size="31" font-weight="bold">ULSTER</text>
+  <rect x="578" y="73" width="232" height="67" rx="22" fill="#fff"/><text x="608" y="116" fill="#242632" font-family="Arial" font-size="31" font-weight="bold">QUEEN'S</text>
+</svg>

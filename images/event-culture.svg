@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="510" viewBox="0 0 800 510">
+  <rect width="800" height="510" fill="#ffdabf"/>
+  <circle cx="652" cy="99" r="110" fill="#ed7d94" opacity=".45"/>
+  <circle cx="154" cy="435" r="140" fill="#ffffff" opacity=".22"/>
+  <path d="M90 110q150-120 290 5t280 130" fill="none" stroke="#ffffff" stroke-width="20" opacity=".35" stroke-linecap="round"/>
+  <rect x="164" y="114" width="470" height="285" rx="32" fill="#fffdf9" stroke="#242632" stroke-width="11" transform="rotate(-4 399 257)"/>
+  <circle cx="560" cy="143" r="16" fill="#ed7d94"/>
+  <text x="400" y="282" text-anchor="middle" font-family="Arial, sans-serif" font-size="128" font-weight="900" fill="#242632">♫</text>
+  <rect x="215" y="352" width="370" height="55" rx="20" fill="#242632"/>
+  <text x="400" y="389" text-anchor="middle" font-family="Arial" font-size="29" font-weight="900" fill="#fffdf9">ART + MUSIC</text>
+  <path d="M74 170l13-30 13 30 30 13-30 13-13 30-13-30-30-13z" fill="#ed7d94"/>
+</svg>
