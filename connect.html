@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Connect with university student communities and discover cross-campus opportunities.">
+
+    <title>Cross-Campus Connect | Campus Connect</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JavaScript -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body data-page="connect">
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="site-header">
+
+        <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
+
+            <div class="container nav-wrap">
+
+                <a class="navbar-brand brand" href="index.html" aria-label="Campus Connect home">
+                    <span class="brand-mark" aria-hidden="true">✳</span>
+                    campus<span>connect</span><span class="brand-dot">.</span>
+                </a>
+
+                <div class="nav-links" aria-label="Site pages">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="events.html">Events</a>
+                    <a class="nav-link" href="clubs.html">Clubs</a>
+                    <a class="nav-link active" href="connect.html" aria-current="page">Connect</a>
+                    <a class="nav-link" href="dashboard.html">My Activity</a>
+                </div>
+
+                <a href="register.html" class="btn btn-dark btn-sm nav-join">
+                    Join an activity
+                    <span aria-hidden="true">↗</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main id="main">
+
+        <!-- Hero Section -->
+        <section class="page-hero page-hero-lilac">
+
+            <div class="container">
+
+                <p class="kicker">
+                    CONNECT BEYOND CAMPUS
+                </p>
+
+                <h1>
+                    Different universities.<br>
+                    <em>Shared experiences.</em>
+                </h1>
+
+                <p>
+                    Discover opportunities beyond your university,
+                    explore different student communities and
+                    connect across campuses.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Cross-Campus Information -->
+        <section class="section-space">
+
+            <div class="container">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-6">
+
+                        <img
+                            class="img-fluid rounded-art"
+                            src="images/cross-campus.svg"
+                            alt="Illustration of university campuses connected together"
+                        >
+
+                    </div>
+
+                    <div class="col-lg-6">
+
+                        <p class="kicker">
+                            HOW CROSS-CAMPUS WORKS
+                        </p>
+
+                        <h2>
+                            Campus life shouldn't stop at your campus.
+                        </h2>
+
+                        <p class="lead-copy">
+                            Campus Connect brings university opportunities
+                            together in one place. Students from Ulster
+                            University can explore activities associated
+                            with Queen's University Belfast and students
+                            from other institutions can explore
+                            Ulster University activities.
+                        </p>
+
+                        <p>
+                            Discover events, explore student clubs and
+                            create connections with communities outside
+                            your own university.
+                        </p>
+
+                        <a class="btn btn-dark" href="events.html">
+                            Browse Events ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section-space section-soft">
+
+            <div class="container">
+
+                <div class="section-top">
+
+                    <div>
+
+                        <p class="kicker">
+                            GET CONNECTED
+                        </p>
+
+                        <h2>
+                            Reach out to a <em>community.</em>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Introduce yourself, share your interests and
+                        prepare a message for another university community.
+                    </p>
+
+                </div>
+
+                <div class="row g-5">
+
+                    <!-- Contact Form -->
+                    <div class="col-lg-7">
+
+                        <div class="form-panel">
+
+                            <form id="contactForm" novalidate>
+
+                                <div class="row g-3">
+
+                                    <!-- Name -->
+                                    <div class="col-md-6">
+
+                                        <label for="contactName" class="form-label">
+                                            Your Name *
+                                        </label>
+
+                                        <input
+                                            id="contactName"
+                                            class="form-control"
+                                            type="text"
+                                            maxlength="80"
+                                            autocomplete="name"
+                                            required
+                                        >
+
+                                        <div class="invalid-feedback">
+                                            Enter your name.
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Email -->
+                                    <div class="col-md-6">
+
+                                        <label for="contactEmail" class="form-label">
+                                            Your Email *
+                                        </label>
+
+                                        <input
+                                            id="contactEmail"
+                                            class="form-control"
+                                            type="email"
+                                            maxlength="120"
+                                            autocomplete="email"
+                                            required
+                                        >
+
+                                        <div class="invalid-feedback">
+                                            Enter a valid email address.
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Your University -->
+                                    <div class="col-md-6">
+
+                                        <label for="contactFrom" class="form-label">
+                                            Your University *
+                                        </label>
+
+                                        <select
+                                            id="contactFrom"
+                                            class="form-select"
+                                            required
+                                        >
+
+                                            <option value="">
+                                                Choose Your University
+                                            </option>
+
+                                            <option>Ulster University</option>
+
+                                            <option>Queen's University Belfast</option>
+
+                                            <option>Belfast Metropolitan College</option>
+
+                                            <option>Other university</option>
+
+                                        </select>
+
+                                        <div class="invalid-feedback">
+                                            Choose your university.
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Destination University -->
+                                    <div class="col-md-6">
+
+                                        <label for="contactTo" class="form-label">
+                                            University You're Contacting *
+                                        </label>
+
+                                        <select
+                                            id="contactTo"
+                                            class="form-select"
+                                            required
+                                        >
+
+                                            <option value="">
+                                                Choose a University
+                                            </option>
+
+                                            <option>Ulster University</option>
+
+                                            <option>Queen's University Belfast</option>
+
+                                            <option>Belfast Metropolitan College</option>
+
+                                        </select>
+
+                                        <div class="invalid-feedback">
+                                            Choose a destination university.
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Subject -->
+                                    <div class="col-12">
+
+                                        <label for="contactSubject" class="form-label">
+                                            Subject *
+                                        </label>
+
+                                        <input
+                                            id="contactSubject"
+                                            class="form-control"
+                                            maxlength="100"
+                                            type="text"
+                                            placeholder="For example: Interested in joining your coding club"
+                                            required
+                                        >
+
+                                        <div class="invalid-feedback">
+                                            Please enter a subject.
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Message -->
+                                    <div class="col-12">
+
+                                        <label for="contactMessage" class="form-label">
+                                            Your Message *
+                                        </label>
+
+                                        <textarea
+                                            id="contactMessage"
+                                            class="form-control"
+                                            maxlength="500"
+                                            rows="5"
+                                            placeholder="Introduce yourself and share why you would like to connect..."
+                                            required
+                                        ></textarea>
+
+                                        <div class="invalid-feedback">
+                                            Write a message (at least 10 characters).
+                                        </div>
+
+                                        <div class="form-text">
+                                            Maximum 500 characters.
+                                            Avoid sharing sensitive personal information.
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Confirmation -->
+                                    <div class="col-12">
+
+                                        <div class="form-check">
+
+                                            <input
+                                                class="form-check-input"
+                                                id="contactConsent"
+                                                type="checkbox"
+                                                required
+                                            >
+
+                                            <label for="contactConsent" class="form-check-label">
+                                                I understand that my message will
+                                                be saved in this browser and will not
+                                                automatically be sent to the selected university. *
+                                            </label>
+
+                                            <div class="invalid-feedback">
+                                                Please confirm before continuing.
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Feedback -->
+                                <div
+                                    id="contactAlert"
+                                    class="alert d-none mt-4"
+                                    aria-live="polite"
+                                    role="status"
+                                ></div>
+
+                                <!-- Submit Button -->
+                                <button
+                                    class="btn btn-accent btn-lg mt-4"
+                                    type="submit"
+                                >
+                                    Save Message Draft ↗
+                                </button>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Information Panel -->
+                    <div class="col-lg-5">
+
+                        <div class="side-info">
+
+                            <h3>
+                                A little hello goes a long way.
+                            </h3>
+
+                            <p>
+                                Every connection begins with a conversation.
+                                Share your interests, introduce yourself
+                                and prepare a message to connect with
+                                another student community.
+                            </p>
+
+                            <p>
+                                You can keep track of your saved messages
+                                through the My Activity page.
+                            </p>
+
+                            <p class="note-box">
+                                Your messages are stored locally in
+                                your browser. They are not automatically
+                                delivered to universities or organisers.
+                            </p>
+
+                            <a class="text-arrow" href="dashboard.html">
+                                View Your Saved Messages ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="row g-4 align-items-start">
+
+                <div class="col-lg-5">
+
+                    <a class="brand footer-brand" href="index.html">
+                        <span class="brand-mark" aria-hidden="true">✳</span>
+                        campus<span>connect</span><span class="brand-dot">.</span>
+                    </a>
+
+                    <p class="footer-copy mt-3">
+                        One student community. More places to belong.
+                        <br>
+                        Discover events, explore clubs and connect
+                        beyond your campus.
+                    </p>
+
+                </div>
+
+                <div class="col-6 col-lg-3">
+
+                    <h3 class="footer-heading">
+                        Explore
+                    </h3>
+
+                    <a href="events.html">Events</a>
+                    <a href="clubs.html">Clubs</a>
+                    <a href="connect.html">Cross-campus</a>
+
+                </div>
+
+                <div class="col-6 col-lg-4">
+
+                    <h3 class="footer-heading">
+                        Your Space
+                    </h3>
+
+                    <a href="register.html">Join an Activity</a>
+                    <a href="dashboard.html">My Activity</a>
+
+                    <p class="small footer-note">
+                        Campus Connect is an independent platform
+                        for exploring university activities.
+                        University names do not imply official affiliation.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <span>
+                    &copy; 2026 Campus Connect. All rights reserved.
+                </span>
+
+                <span>
+                    Built with HTML, Bootstrap, CSS & JavaScript
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>
