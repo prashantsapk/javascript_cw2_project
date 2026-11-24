@@ -211,4 +211,50 @@ function initJoinForm() {
     if (query.get("id") && Array.from(activity.options).some(function (option) { return option.value === query.get("id"); })) {
         activity.value = query.get("id");
     }
-   
+    updateHost();
+
+//event listener sumbit
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const nameField = getElement("studentName");
+        const emailField = getElement("studentEmail");
+        const consent = getElement("demoConsent");
+        const name = nameField.value.trim();
+        const email = emailField.value.trim();
+        let valid = true;
+        if (!setFieldValidity(nameField, name.length >= 2)) valid = false;
+        if (!setFieldValidity(emailField, isEmail(email))) valid = false;
+        if (!setFieldValidity(home, home.value !== "")) valid = false;
+        if (!setFieldValidity(type, type.value !== "")) valid = false;
+        if (!setFieldValidity(activity, activity.value !== "")) valid = false;
+        if (!setFieldValidity(consent, consent.checked)) valid = false;
+        if (!valid) { showFeedback("joinAlert", "Please complete the highlighted fields correctly.", false); return; }
+
+        const list = type.value === "event" ? events : clubs;
+        const selected = list.find(function (item) { return item.id === activity.value; });
+        if (!selected) { showFeedback("joinAlert", "Please choose a valid activity.", false); return; }
+
+        const joins = loadItems("campusConnectJoins");
+        const isDuplicate = joins.some(function (item) {
+            return item.email.toLowerCase() === email.toLowerCase() && item.activityId === selected.id && item.type === type.value;
+        });
+        if (isDuplicate) { showFeedback("joinAlert", "You already saved a request for this activity with this email. See My Activity.", false); return; }
+
+        joins.push({
+            id: Date.now().toString() + "-" + Math.random().toString(36).slice(2, 7),
+            name: name,
+            email: email,
+            homeUniversity: home.value,
+            hostUniversity: selected.university,
+            type: type.value,
+            activityId: selected.id,
+            activityName: selected.name,
+            message: getElement("joinMessage").value.trim(),
+            created: new Date().toLocaleDateString("en-GB")
+        });
+        if (!saveItems("campusConnectJoins", joins)) { showFeedback("joinAlert", "Could not save. Check browser storage settings and try again.", false); return; }
+        form.reset();
+        fillActivities();
+        showFeedback("joinAlert", "Request saved on this browser! View it in My Activity. This is not a real registration.", true);
+    });
+}
