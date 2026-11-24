@@ -327,4 +327,40 @@ function initDashboard() {
         target.appendChild(box);
     }
 
-    
+    function render() {
+        const joins = loadItems("campusConnectJoins");
+        const messages = loadItems("campusConnectMessages");
+        getElement("totalJoins").textContent = String(joins.length);
+        getElement("totalMessages").textContent = String(messages.length);
+        getElement("totalUniversities").textContent = String(new Set(joins.map(function (item) { return item.hostUniversity; })).size);
+        joinList.replaceChildren();
+        messageList.replaceChildren();
+        if (!joins.length) emptyMessage("No join requests saved yet.", joinList, "events.html", "Find an event");
+        joins.slice().reverse().forEach(function (item) {
+            joinList.appendChild(savedCard(item.activityName, [
+                "Type: " + item.type,
+                "From: " + item.homeUniversity + " → Host: " + item.hostUniversity,
+                "Student: " + item.name + " · " + item.email,
+                "Saved: " + item.created
+            ], item.id, "campusConnectJoins", render));
+        });
+        if (!messages.length) emptyMessage("No message drafts saved yet.", messageList, "connect.html", "Write a message");
+        messages.slice().reverse().forEach(function (item) {
+            messageList.appendChild(savedCard(item.subject, [
+                "To: " + item.to,
+                "From: " + item.name + " (" + item.from + ")",
+                "Message: " + item.message,
+                "Saved: " + item.created
+            ], item.id, "campusConnectMessages", render));
+        });
+    }
+    render();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    initEventPage();
+    initClubPage();
+    initJoinForm();
+    initContactForm();
+    initDashboard();
+});
