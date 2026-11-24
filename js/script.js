@@ -213,7 +213,6 @@ function initJoinForm() {
     }
     updateHost();
 
-//event listener sumbit
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         const nameField = getElement("studentName");
@@ -258,3 +257,74 @@ function initJoinForm() {
         showFeedback("joinAlert", "Request saved on this browser! View it in My Activity. This is not a real registration.", true);
     });
 }
+
+function initContactForm() {
+    const form = getElement("contactForm");
+    if (!form) return;
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const name = getElement("contactName");
+        const email = getElement("contactEmail");
+        const from = getElement("contactFrom");
+        const to = getElement("contactTo");
+        const subject = getElement("contactSubject");
+        const message = getElement("contactMessage");
+        const consent = getElement("contactConsent");
+        let valid = true;
+        if (!setFieldValidity(name, name.value.trim().length >= 2)) valid = false;
+        if (!setFieldValidity(email, isEmail(email.value.trim()))) valid = false;
+        if (!setFieldValidity(from, from.value !== "")) valid = false;
+        if (!setFieldValidity(to, to.value !== "")) valid = false;
+        if (!setFieldValidity(subject, subject.value.trim().length >= 3)) valid = false;
+        if (!setFieldValidity(message, message.value.trim().length >= 10)) valid = false;
+        if (!setFieldValidity(consent, consent.checked)) valid = false;
+        if (!valid) { showFeedback("contactAlert", "Please complete the highlighted fields correctly.", false); return; }
+
+        const saved = loadItems("campusConnectMessages");
+        saved.push({
+            id: Date.now().toString() + "-" + Math.random().toString(36).slice(2, 7),
+            name: name.value.trim(), email: email.value.trim(),
+            from: from.value, to: to.value,
+            subject: subject.value.trim(), message: message.value.trim(),
+            created: new Date().toLocaleDateString("en-GB")
+        });
+        if (!saveItems("campusConnectMessages", saved)) { showFeedback("contactAlert", "Could not save your message locally.", false); return; }
+        form.reset();
+        showFeedback("contactAlert", "Message draft saved in My Activity. It was not sent to the university.", true);
+    });
+}
+
+function savedCard(title, details, id, key, onDelete) {
+    const card = document.createElement("article");
+    card.className = "saved-card";
+    card.appendChild(createText("h4", title));
+    details.forEach(function (detail) { card.appendChild(createText("p", detail)); });
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "btn btn-outline-danger";
+    button.textContent = "Remove";
+    button.setAttribute("aria-label", "Remove " + title);
+    button.addEventListener("click", function () {
+        const remaining = loadItems(key).filter(function (item) { return item.id !== id; });
+        if (saveItems(key, remaining)) onDelete();
+    });
+    card.appendChild(button);
+    return card;
+}
+
+function initDashboard() {
+    const joinList = getElement("joinList");
+    if (!joinList) return;
+    const messageList = getElement("messageList");
+
+    function emptyMessage(text, target, href, linkText) {
+        const box = document.createElement("div");
+        box.className = "saved-empty";
+        box.appendChild(createText("p", text));
+        const link = createText("a", linkText, "btn btn-dark btn-sm");
+        link.href = href;
+        box.appendChild(link);
+        target.appendChild(box);
+    }
+
+    
