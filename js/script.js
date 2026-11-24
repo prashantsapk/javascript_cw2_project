@@ -251,10 +251,10 @@ function initJoinForm() {
             message: getElement("joinMessage").value.trim(),
             created: new Date().toLocaleDateString("en-GB")
         });
-        if (!saveItems("campusConnectJoins", joins)) { showFeedback("joinAlert", "Could not save. Check browser storage settings and try again.", false); return; }
+        if (!saveItems("campusConnectJoins", joins)) { showFeedback("joinAlert", "Could not save, fill the details properly", false); return; }
         form.reset();
         fillActivities();
-        showFeedback("joinAlert", "Request saved on this browser! View it in My Activity. This is not a real registration.", true);
+        showFeedback("joinAlert", "Request submitted", true);
     });
 }
 
