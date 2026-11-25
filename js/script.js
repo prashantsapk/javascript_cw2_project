@@ -302,7 +302,7 @@ function savedCard(title, details, id, key, onDelete) {
     const button = document.createElement("button");
     button.type = "button";
     button.className = "btn btn-outline-danger";
-    button.textContent = "Remove";
+    button.textContent = "Delete";
     button.setAttribute("aria-label", "Remove " + title);
     button.addEventListener("click", function () {
         const remaining = loadItems(key).filter(function (item) { return item.id !== id; });
