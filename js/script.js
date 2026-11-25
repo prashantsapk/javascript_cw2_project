@@ -335,7 +335,7 @@ function initDashboard() {
         getElement("totalUniversities").textContent = String(new Set(joins.map(function (item) { return item.hostUniversity; })).size);
         joinList.replaceChildren();
         messageList.replaceChildren();
-        if (!joins.length) emptyMessage("No join requests saved yet.", joinList, "events.html", "Find an event");
+        if (!joins.length) emptyMessage("No join requests sent yet.", joinList, "events.html", "Find an event");
         joins.slice().reverse().forEach(function (item) {
             joinList.appendChild(savedCard(item.activityName, [
                 "Type: " + item.type,
@@ -344,7 +344,7 @@ function initDashboard() {
                 "Saved: " + item.created
             ], item.id, "campusConnectJoins", render));
         });
-        if (!messages.length) emptyMessage("No message drafts saved yet.", messageList, "connect.html", "Write a message");
+        if (!messages.length) emptyMessage("No messages sent yet.", messageList, "connect.html", "Write a message");
         messages.slice().reverse().forEach(function (item) {
             messageList.appendChild(savedCard(item.subject, [
                 "To: " + item.to,
