@@ -53,7 +53,7 @@ The project includes fictional sample activities associated with Ulster Universi
 - Web Storage API (`localStorage`) — browser-based data persistence.
 - SVG — website illustrations and icons.
 
-No jQuery, Bootstrap JavaScript, backend or database is required.
+No backend or database is required.
 
 ## 🚀 Getting Started
 
