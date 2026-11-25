@@ -123,26 +123,6 @@ The dashboard reads these records, updates summary counts and allows individual 
 | ![Connect](screenshots/connect.png) | ![My Activity](screenshots/my-activity.png) |
 | Explore cross-campus opportunities | Manage saved requests and messages |
 
-## 🧪 Suggested Manual Testing
-
-- Navigate between all six pages.
-- Search for an event or club and change or reset the filters.
-- Submit a join request with fictional student details and check the dashboard.
-- Attempt a duplicate join request and check the validation feedback.
-- Submit a demonstration contact message and check the dashboard.
-- Refresh the browser to check persistence and delete a saved record.
-- Resize the browser to check the responsive layout.
-
-## 📌 Limitations
-
-This is a coursework demonstration, not an official university service. Activities are fictional. Requests and messages are saved locally in the browser and are not transmitted to universities, despite the confirmation wording in the contact form. There is no authentication or server-side storage. Use fictional details when testing forms. Clearing browser storage removes saved records.
-
-## 🔮 Future Improvements
-
-Possible extensions include secure user accounts, a backend database, real university activity listings and genuine message delivery.
-
----
-
 <div align="center">
 
 **Campus Connect · JavaScript Coursework 2**
