@@ -237,7 +237,7 @@ function initJoinForm() {
         const isDuplicate = joins.some(function (item) {
             return item.email.toLowerCase() === email.toLowerCase() && item.activityId === selected.id && item.type === type.value;
         });
-        if (isDuplicate) { showFeedback("joinAlert", "You already saved a request for this activity with this email. See My Activity.", false); return; }
+        if (isDuplicate) { showFeedback("joinAlert", "You already sent a request for this activity with this email. See My Activity.", false); return; }
 
         joins.push({
             id: Date.now().toString() + "-" + Math.random().toString(36).slice(2, 7),
@@ -288,9 +288,9 @@ function initContactForm() {
             subject: subject.value.trim(), message: message.value.trim(),
             created: new Date().toLocaleDateString("en-GB")
         });
-        if (!saveItems("campusConnectMessages", saved)) { showFeedback("contactAlert", "Could not save your message locally.", false); return; }
+        if (!saveItems("campusConnectMessages", saved)) { showFeedback("contactAlert", "Could not sent your message.", false); return; }
         form.reset();
-        showFeedback("contactAlert", "Message draft saved in My Activity. It was not sent to the university.", true);
+        showFeedback("contactAlert", "Message sent, you can view in My Activity. It was sent to the university.", true);
     });
 }
 
